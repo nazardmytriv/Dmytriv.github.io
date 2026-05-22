@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'PT Sans', sans-serif;
+  color: #333;
+}
+
+.wrapper {
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 20px;
+}
+
+/* Заголовок */
+.catalog-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #222;
+  margin-bottom: 40px;
+}
+
+/*  Каталог */
+.catalog {
+  position: relative;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 20px 60px;
+}
+
+/* Clearfix */
+.catalog::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/* Стрілки */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.arrow:hover {
+  border-color: #888;
+  color: #555;
+}
+
+.arrow-left  { left: 14px; }
+.arrow-right { right: 14px; }
+
+/*  Картка товару  */
+.card {
+  float: left;
+  width: 25%;
+  padding: 0 16px;
+  position: relative;
+  text-align: center;
+  border-right: 1px solid #e5e5e5;
+  min-height: 420px;
+}
+
+.card:last-of-type {
+  border-right: none;
+}
+
+/* Бейдж (Новинка / Хіт) */
+.badge {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 1.3;
+  text-align: center;
+  padding-top: 16px;
+}
+
+.badge-new {
+  background-color: #6abf4b;
+}
+
+.badge-hit {
+  background-color: #29b6d8;
+}
+
+/* Категорія */
+.category {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #888;
+  text-transform: uppercase;
+  margin-top: 52px;
+  margin-bottom: 8px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-bottom: 16px;
+}
+
+/* Зображення товару */
+.img-link {
+  display: block;
+  height: 160px;
+  margin-bottom: 16px;
+}
+
+.product-img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+/* Назва товару (посилання) */
+.product-name {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #29b6d8;
+  text-decoration: none;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.product-name:hover {
+  text-decoration: underline;
+}
+
+/* Ціна */
+.price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.old-price {
+  color: #aaa;
+  text-decoration: line-through;
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+.new-price {
+  font-weight: 700;
+  color: #333;
+}
+
+/* Кнопки */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-cart {
+  background-color: #f0d000;
+  color: #333;
+}
+
+.btn-cart:hover {
+  background-color: #d4b800;
+}
+
+.btn-soon {
+  background-color: #e040a0;
+  color: #fff;
+}
