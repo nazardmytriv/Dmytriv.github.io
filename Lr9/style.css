@@ -13,6 +13,7 @@ body {
     line-height: 1.6;
 }
 
+/* --- Перевикористовувані компоненти (Гнучкий контейнер) --- */
 .container {
     width: 100%;            
     max-width: 1140px;       
@@ -47,7 +48,7 @@ body {
 
 .logo {
     font-size: 1.5rem;
-    color: #5bc0de; /* Блакитний колір проекту */
+    color: #5bc0de;
     font-weight: 600;
 }
 
@@ -73,7 +74,7 @@ body {
 
 /* --- Головний екран (Jumbotron) --- */
 .jumbotron {
-    background-image: url('./img/jumbotron.jpg');
+    background-image: url('img/jumbotron.jpg');
     background-size: cover;
     background-position: center;
     height: 450px;
@@ -93,7 +94,7 @@ body {
 
 .btn-pink {
     display: inline-block;
-    background-color: #ff527b; /* Рожева кнопка */
+    background-color: #ff527b;
     color: #fff;
     padding: 14px 28px;
     text-decoration: none;
@@ -131,7 +132,7 @@ body {
 
 /* --- Блог (Blog) --- */
 .blog-section {
-    background-color: #fafafa; /* Легкий сірий фон для розділення секцій */
+    background-color: #fafafa;
 }
 
 .blog-list {
@@ -143,7 +144,6 @@ body {
 .blog-item {
     display: flex;
     background-color: #fff;
-    /* Якщо хочеш легку тінь як у шаблоні: */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
 }
 
@@ -151,6 +151,7 @@ body {
     width: 350px;
     height: 230px;
     overflow: hidden;
+    flex-shrink: 0; /* Не дає картинці стискатися */
 }
 
 .blog-img img {
@@ -185,7 +186,7 @@ body {
 
 /* --- Підвал (Footer) --- */
 .main-footer {
-    background-color: #343a40; /* Темний графітовий колір */
+    background-color: #343a40;
     color: #fff;
     padding: 40px 0;
     text-align: center;
@@ -229,96 +230,76 @@ body {
     color: #778ca3;
 }
 
-
 /* =====================================================================
-   АДАПТИВНІСТЬ (ВИПРАВЛЕНА ТА ОПТИМІЗОВАНА)
+   МЕДІА-ЗАПИТИ ДЛЯ РЕАЛЬНОЇ АДАПТИВНОСТІ (ПРАВИЛЬНА ВЕРСТКА)
    ===================================================================== */
 
-/* Для екранів менше 992px (Планшети) */
+/* Планшети (max-width: 992px) */
 @media (max-width: 992px) {
-    .services-grid {
-        gap: 20px;
-    }
-    
     .blog-img {
-        width: 250px;
+        width: 250px; /* Зменшуємо картинку, щоб текст мав місце */
     }
-    
     .blog-text {
         width: calc(100% - 250px);
         padding: 20px;
     }
 }
 
-/* Для екранів менше 768px (Телефони) */
+/* Смартфони (max-width: 768px) */
 @media (max-width: 768px) {
-    /* Шапка */
+    
+    /* Шапка стає вертикальною, елементи по центру */
     .header-inner {
         flex-direction: column;
         gap: 15px;
     }
-
     .main-nav ul {
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 15px; /* Замість марджинів використовуємо чистий flex-gap */
         padding: 0;
     }
-
     .main-nav ul li {
-        margin-left: 0; /* ВИПРАВЛЕНО: Скинули десктопний марджин, щоб не косило центр */
+        margin: 0 10px; /* Замість жорсткого марджину зліва робимо рівномірні відступи */
     }
 
-    /* Jumbotron (Головний блок) */
+    /* Зменшуємо гігантський Jumbotron під екран мобілки */
     .jumbotron {
-        height: 320px; /* ВИПРАВЛЕНО: Зменшили висоту під екран телефона */
+        height: 300px;
     }
-
     .jumbotron-content h1 {
-        font-size: 1.8rem; /* Трохи зменшили, щоб довгі назви не ламали рядок */
-        padding: 0 15px;
+        font-size: 1.8rem;
         margin-bottom: 20px;
+        padding: 0 10px;
     }
 
-    /* Послуги (Services) */
+    /* Послуги падають в один стовпчик на всю ширину */
     .services-grid {
-        flex-direction: column; 
+        flex-direction: column;
         gap: 35px;
     }
-
     .service-item {
         width: 100%;
     }
 
-    /* Блог (Blog) */
+    /* Картки Блогу перемикаються у вертикальний режим */
     .blog-item {
-        flex-direction: column; 
+        flex-direction: column;
     }
-
     .blog-img {
         width: 100%;
-        height: auto;
+        height: 200px; /* Фіксуємо висоту для мобільного прев'ю */
     }
-    
-    .blog-img img {
-        aspect-ratio: 16 / 9; 
-    }
-
     .blog-text {
         width: 100%;
         padding: 20px;
     }
 
-    /* Підвал (Footer) */
+    /* Навігація у футері теж адаптується */
     .footer-nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
-        padding: 0;
+        gap: 10px;
     }
-
     .footer-nav ul li {
-        margin: 0; /* ВИПРАВЛЕНО: Керуємо відступами суто через gap контейнера */
+        margin: 0 5px;
     }
 }
