@@ -194,3 +194,36 @@ aside.left-side, main.right-side {
     color: #2c3e50;
     margin-top: 10px;
 }
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease;
+    background-color: white;
+    border-radius: 50%;
+    padding: 4px;
+    display: block;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+}
+
+.icon-telegram {
+    fill: #26a5e4;
+}
+
+.icon-youtube {
+    fill: #ff0000;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
