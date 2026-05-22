@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №4</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background-color: #f4f6f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 300px; /* Великий відступ, щоб кола, які розростаються візуально, не наповзали одне на одне */
+            margin-top: 140px;
+        }
+
+        .circle-base {
+            width: 140px;
+            height: 140px;
+            background-color: #ffffff;
+            
+            /* Вендорні префікси */
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        /* СПОСІБ 1: Border + Outline */
+        .method-border-outline {
+            box-sizing: content-box;
+            border: 67px solid #ffff00;
+            outline: 68px solid #0f17ff;
+        }
+
+        /* СПОСІБ 2: Множинні Box-Shadow */
+        .method-box-shadow {
+            box-sizing: content-box;
+            box-shadow: 0 0 0 67px #ffff00, 0 0 0 135px #0f17ff;
+        }
+
+        /* СПОСІБ 3: Обов'язковий варіант з двома псевдоелементами */
+        .method-pseudo {
+            box-sizing: content-box;
+            position: relative;
+            z-index: 1;
+        }
+
+        .method-pseudo::before {
+            content: "";
+            position: absolute;
+            top: -67px;
+            left: -67px;
+            right: -67px;
+            bottom: -67px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 67px solid #ffff00;
+            z-index: -1;
+        }
+
+        .method-pseudo::after {
+            content: "";
+            position: absolute;
+            top: -135px;
+            left: -135px;
+            right: -135px;
+            bottom: -135px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 68px solid #0f17ff;
+            z-index: -2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="circle-base method-border-outline">N. D.</div>
+        <div class="circle-base method-box-shadow">N. D.</div>
+        <div class="circle-base method-pseudo">N. D.</div>
+    </div>
+
+</body>
+</html>
