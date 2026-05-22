@@ -1,0 +1,91 @@
+body {
+  font-family: Georgia, serif;
+  padding: 20px 40px;
+}
+
+h2 {
+  margin-top: 30px;
+}
+
+/* =====================
+   Спосіб 1: <table>
+   ===================== */
+.data-table {
+  border-collapse: collapse;
+  width: 600px;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #b8d4e8;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.data-table thead th {
+  background-color: #5b9dc9;
+  color: #fff;
+  font-weight: bold;
+}
+
+.data-table td.company {
+  background-color: #5b9dc9;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+}
+
+.data-table tbody td:not(.company) {
+  background-color: #ddeef7;
+}
+
+
+/* =====================
+   Спосіб 2: float
+   ===================== */
+.float-table {
+  width: 600px;
+  border: 1px solid #b8d4e8;
+}
+
+.float-row::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.float-cell {
+  box-sizing: border-box;
+  float: left;
+  width: 20%;
+  padding: 12px 10px;
+  text-align: center;
+  border-right: 1px solid #b8d4e8;
+  border-bottom: 1px solid #b8d4e8;
+}
+
+.float-cell:last-child {
+  border-right: none;
+}
+
+.float-row:last-child .float-cell {
+  border-bottom: none;
+}
+
+.header-row .float-cell {
+  background-color: #5b9dc9;
+  color: #fff;
+  font-weight: bold;
+}
+
+.float-row:not(.header-row) .float-cell.company {
+  background-color: #5b9dc9;
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 14px;
+}
+
+.float-row:not(.header-row) .float-cell:not(.company) {
+  background-color: #ddeef7;
+}
