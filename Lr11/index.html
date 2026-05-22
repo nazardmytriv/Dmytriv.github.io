@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Forms - Android Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+        
+        <section class="form-card">
+            <div class="form-header">
+                <h1 class="form-title">Login</h1>
+                <p class="form-subtitle">Welcome back!</p>
+            </div>
+
+            <form action="#" class="main-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Enter Your Username / Email" required>
+                </div>
+                
+                <div class="input-group password-wrapper">
+                    <input type="password" placeholder="Enter Your Password" required>
+                    <i class="fa-regular fa-eye-slash toggle-password"></i>
+                </div>
+
+                <div class="form-actions">
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+
+            <p class="switch-text">Don’t have an account? <a href="#">Signup</a></p>
+
+            <div class="divider">Or</div>
+
+            <div class="social-buttons">
+                <button class="btn btn-social btn-fb">
+                    <i class="fa-brands fa-facebook-f"></i> Login with Facebook
+                </button>
+                <button class="btn btn-social btn-google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"> Login with Google
+                </button>
+            </div>
+
+            <div class="author-badge">
+                <div class="avatar">
+                    <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=vinsensius" alt="It's Me">
+                </div>
+                <div class="author-info">
+                    <span class="tag">It's Me</span>
+                    <span class="name">Vinsensius Sugito Lein</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-card">
+            <div class="form-header">
+                <h1 class="form-title">Signup</h1>
+            </div>
+
+            <form action="#" class="main-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Enter Your Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" placeholder="Enter Your Phone Number" required>
+                </div>
+                <div class="input-group password-wrapper">
+                    <input type="password" placeholder="Enter Your Password" required>
+                    <i class="fa-regular fa-eye-slash toggle-password"></i>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Signup</button>
+            </form>
+
+            <p class="switch-text">Already have an account? <a href="#">Login</a></p>
+
+            <div class="divider">Or</div>
+
+            <div class="social-buttons">
+                <button class="btn btn-social btn-fb">
+                    <i class="fa-brands fa-facebook-f"></i> Login with Facebook
+                </button>
+                <button class="btn btn-social btn-google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"> Login with Google
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

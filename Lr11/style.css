@@ -1,0 +1,284 @@
+/* =====================================================================
+   1. CSS RESET & GLOBAL STYLES (Базове налаштування з відео)
+   ===================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1e1e1e; /* Темний фон для бекграунду, щоб виділити картки */
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Контейнер для обох форм (Принцип квадратів та Flexbox) */
+.app-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 900px; /* Обмеження по ширині, щоб не розтікалося на ПК */
+}
+
+/* =====================================================================
+   2. FORM CARD STYLES (Оформлення карток)
+   ===================================================================== */
+.form-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px; /* Ширина стандартного Android екрану */
+    padding: 45px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовки */
+.form-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.form-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Поля вводу (Inputs) */
+.main-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #1f2937;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #1967d2;
+    box-shadow: 0 0 0 3px rgba(25, 103, 210, 0.1);
+}
+
+/* Контейнер пароля з іконкою ока */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 50px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f8c8d;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.toggle-password:hover {
+    color: #1967d2;
+}
+
+/* Посилання "Forgot Password" та перемикачі */
+.form-actions {
+    text-align: center;
+    margin-top: 4px;
+}
+
+.forgot-link {
+    color: #1967d2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.switch-text {
+    text-align: center;
+    font-size: 14px;
+    color: #1a1a1a;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.switch-text a {
+    color: #1967d2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Кнопки (Buttons) */
+.btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: #1967d2;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #1555b4;
+}
+
+/* Розділювач "Or" */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 14px;
+    margin: 24px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+/* Соціальні кнопки */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-social {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-fb {
+    background-color: #1877f2;
+    color: #ffffff;
+}
+
+.btn-fb:hover {
+    background-color: #145dbf;
+}
+
+.btn-google {
+    background-color: #ffffff;
+    color: #1f2937;
+    border: 1px solid #e0e0e0;
+}
+
+.btn-google:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-google img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Відзнака автора (Низ форми Login) */
+.author-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.author-badge .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f0f3f6;
+}
+
+.author-badge .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-info .tag {
+    font-size: 11px;
+    color: #7f8c8d;
+}
+
+.author-info .name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* =====================================================================
+   4. RESPONSIVE DESIGN (Адаптивність для І рівня оцінювання)
+   ===================================================================== */
+@media (max-width: 850px) {
+    .app-container {
+        flex-direction: column; /* На мобілках карти лягають одна під одну */
+        align-items: center;
+    }
+    
+    body {
+        padding: 20px 10px;
+    }
+}
