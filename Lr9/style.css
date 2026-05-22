@@ -230,6 +230,10 @@ body {
 }
 
 
+/* =====================================================================
+   АДАПТИВНІСТЬ (ВИПРАВЛЕНА ТА ОПТИМІЗОВАНА)
+   ===================================================================== */
+
 /* Для екранів менше 992px (Планшети) */
 @media (max-width: 992px) {
     .services-grid {
@@ -237,7 +241,7 @@ body {
     }
     
     .blog-img {
-        width: 250px; /* Зменшуємо ширину зображення в блозі */
+        width: 250px;
     }
     
     .blog-text {
@@ -257,24 +261,29 @@ body {
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 15px; /* Замість марджинів використовуємо чистий flex-gap */
         padding: 0;
     }
 
     .main-nav ul li {
-        margin: 0 10px;
+        margin-left: 0; /* ВИПРАВЛЕНО: Скинули десктопний марджин, щоб не косило центр */
     }
 
     /* Jumbotron (Головний блок) */
+    .jumbotron {
+        height: 320px; /* ВИПРАВЛЕНО: Зменшили висоту під екран телефона */
+    }
+
     .jumbotron-content h1 {
-        font-size: 2rem; /* Менший заголовок */
+        font-size: 1.8rem; /* Трохи зменшили, щоб довгі назви не ламали рядок */
         padding: 0 15px;
+        margin-bottom: 20px;
     }
 
     /* Послуги (Services) */
     .services-grid {
-        flex-direction: column; /* Блоки стають один під одним */
-        gap: 40px;
+        flex-direction: column; 
+        gap: 35px;
     }
 
     .service-item {
@@ -283,7 +292,7 @@ body {
 
     /* Блог (Blog) */
     .blog-item {
-        flex-direction: column; /* Картинка над текстом */
+        flex-direction: column; 
     }
 
     .blog-img {
@@ -292,7 +301,7 @@ body {
     }
     
     .blog-img img {
-        aspect-ratio: 16 / 9; /* Робить картинки пропорційними */
+        aspect-ratio: 16 / 9; 
     }
 
     .blog-text {
@@ -300,15 +309,16 @@ body {
         padding: 20px;
     }
 
+    /* Підвал (Footer) */
     .footer-nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 15px;
         margin-bottom: 20px;
         padding: 0;
     }
 
     .footer-nav ul li {
-        margin: 0 10px;
+        margin: 0; /* ВИПРАВЛЕНО: Керуємо відступами суто через gap контейнера */
     }
 }
