@@ -1,0 +1,230 @@
+/* --- Обнулення та базові стилі --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #333;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* --- Перевикористовувані компоненти (DRY) --- */
+.container {
+    width: 1140px; /* Фіксована десктопна ширина без адаптиву */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.site-section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #222;
+    text-transform: capitalize;
+}
+
+/* --- Шапка (Header) --- */
+.main-header {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #5bc0de; /* Блакитний колір проекту */
+    font-weight: 600;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.main-nav ul li a:hover {
+    color: #5bc0de;
+}
+
+/* --- Головний екран (Jumbotron) --- */
+.jumbotron {
+    background-image: url('./img/jumbotron.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.jumbotron-content h1 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.btn-pink {
+    display: inline-block;
+    background-color: #ff527b; /* Рожева кнопка */
+    color: #fff;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-pink:hover {
+    background-color: #e03d64;
+}
+
+/* --- Послуги (Services) --- */
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-item {
+    width: 30%;
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.service-item p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* --- Блог (Blog) --- */
+.blog-section {
+    background-color: #fafafa; /* Легкий сірий фон для розділення секцій */
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.blog-item {
+    display: flex;
+    background-color: #fff;
+    /* Якщо хочеш легку тінь як у шаблоні: */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+}
+
+.blog-img {
+    width: 350px;
+    height: 230px;
+    overflow: hidden;
+}
+
+.blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-text {
+    padding: 30px;
+    width: calc(100% - 350px);
+}
+
+.blog-text h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.blog-date {
+    display: block;
+    font-size: 0.8rem;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.blog-text p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* --- Підвал (Footer) --- */
+.main-footer {
+    background-color: #343a40; /* Темний графітовий колір */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 1.6rem;
+    color: #a5b1c2;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.footer-nav ul li {
+    margin: 0 15px;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    color: #a5b1c2;
+    font-size: 0.9rem;
+}
+
+.footer-nav ul li a:hover {
+    color: #fff;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: #778ca3;
+}
