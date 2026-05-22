@@ -13,9 +13,9 @@ body {
     line-height: 1.6;
 }
 
-/* --- Перевикористовувані компоненти (DRY) --- */
 .container {
-    width: 1140px; /* Фіксована десктопна ширина без адаптиву */
+    width: 100%;            
+    max-width: 1140px;       
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -227,4 +227,88 @@ body {
 .copyright {
     font-size: 0.75rem;
     color: #778ca3;
+}
+
+
+/* Для екранів менше 992px (Планшети) */
+@media (max-width: 992px) {
+    .services-grid {
+        gap: 20px;
+    }
+    
+    .blog-img {
+        width: 250px; /* Зменшуємо ширину зображення в блозі */
+    }
+    
+    .blog-text {
+        width: calc(100% - 250px);
+        padding: 20px;
+    }
+}
+
+/* Для екранів менше 768px (Телефони) */
+@media (max-width: 768px) {
+    /* Шапка */
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .main-nav ul li {
+        margin: 0 10px;
+    }
+
+    /* Jumbotron (Головний блок) */
+    .jumbotron-content h1 {
+        font-size: 2rem; /* Менший заголовок */
+        padding: 0 15px;
+    }
+
+    /* Послуги (Services) */
+    .services-grid {
+        flex-direction: column; /* Блоки стають один під одним */
+        gap: 40px;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    /* Блог (Blog) */
+    .blog-item {
+        flex-direction: column; /* Картинка над текстом */
+    }
+
+    .blog-img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .blog-img img {
+        aspect-ratio: 16 / 9; /* Робить картинки пропорційними */
+    }
+
+    .blog-text {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .footer-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .footer-nav ul li {
+        margin: 0 10px;
+    }
 }
